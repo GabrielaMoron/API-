@@ -38,6 +38,7 @@ exports.obtenerid = async (req, res) => {
 
   //registrar
   exports.add = async (req, res) => {
+    //try grande con el genero y el registro del album
     try {
   
        const {
@@ -58,14 +59,15 @@ exports.obtenerid = async (req, res) => {
       estadoAlbum,
       genero: genero._id
         
-      })
+      }) //termina genrro
       
+      //registro de album
       try{
         const saveAlbum=await nAlbum.save();
         genero.album=genero.album.concat(saveAlbum._id);
         await genero.save();
 
-        console.log(saveAlbum)
+        console.log(saveAlbum);
         res.status(200).json(saveAlbum);
       }catch (error) {
         res.status(500).json({msj:"Error al registrar"+error})
@@ -81,6 +83,8 @@ exports.obtenerid = async (req, res) => {
   
   }
 
+
+  //editar
 exports.edit = async(req, res) => {
     try {
       const _id = req.params._id;

@@ -5,9 +5,7 @@ const {Router}=require("express");
 const rutasCancion=Router();
 const ctrCan=require("../controllers/cancionC")
 
-const multer=require("multer");
 
-const carga=multer({storage:rutaStorage});
 
 //cancion
 rutasCancion.get('/', ctrCan.obtener);

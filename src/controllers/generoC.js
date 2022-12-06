@@ -2,13 +2,8 @@ const Genero = require("../models/genero");
 const jwt=require("jsonwebtoken");
 
 exports.obtener = async (req, res) => {
-    
-    try {
-    const genero = await Genero.find().populate({
-    path: "album",
-    select:{genero:0} //populate de genero. remplazo del path en el documento cuando esta en la coleccion, o sea select and put  
-    });
-
+  try {
+    const genero = await Genero.find();
     res.status(200).json(genero);
   } catch (error) {
     res.status(500).json(error)
@@ -17,14 +12,9 @@ exports.obtener = async (req, res) => {
 }
 
 exports.obtenerid = async (req, res) => {
-    
     try {
-    const _id = req.params._id;
-    const genero = await Genero.findById(_id).populate({
-    path: "album",
-    select:{genero:0} 
-    }); 
-       
+      const _id = req.params._id;
+      const genero = await Genero.findById(_id);
       res.status(200).json(genero);
     } catch (error) {
       res.status(500).json(error)
@@ -42,7 +32,7 @@ exports.obtenerid = async (req, res) => {
      
       await nGenero.save();
       console.log(nGenero);
-      res.json({ msj: "Usuario registrado exitosamente", nGenero })
+      //res.json({ msj: "Usuario registrado exitosamente", id: nGenero._id })
     } catch (error) {
       res.status(500).json({msj:"Error al registrar"+error})
     }

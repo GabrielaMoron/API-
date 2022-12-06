@@ -5,10 +5,6 @@ const {Router}=require("express");
 const rutasAlbum=Router();
 const ctrAlb=require("../controllers/albumC")
 
-const multer=require("multer");
-
-const carga=multer({storage:rutaStorage});
-
 
 
 //album

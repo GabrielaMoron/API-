@@ -8,9 +8,6 @@ const {Router}=require("express");
 const rutasGenero=Router();
 const ctrGen=require("../controllers/generoC")
 
-const multer=require("multer");
-
-const carga=multer({storage:rutaStorage});
 
 
 

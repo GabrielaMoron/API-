@@ -1,6 +1,6 @@
 const {Schema,model}=require("mongoose");
 
-const albumSchema = new mongoose.Schema({
+const albumSchema = new Schema({
     _id:Number,
     nombreAlbum: String,
     anioPublicacion: String,

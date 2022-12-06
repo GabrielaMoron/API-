@@ -1,6 +1,6 @@
 const {Schema,model}=require("mongoose");
 
-const cancionSchema = new mongoose.Schema({
+const cancionSchema = new Schema({
     _id:Number,
     nombreCancion: String,
     fechaGrabacion: Date,

@@ -1,6 +1,8 @@
 
-const generoSchema = new mongoose.Schema({
-    _id:Number,
+const {Schema,model}=require("mongoose");
+
+const generoSchema = new Schema({
+    _id: Number,
     nombreGenero: String,
     estadoGenero: String,
   

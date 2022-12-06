@@ -1,6 +1,6 @@
 const Album = require("../models/album");
 const Genero = require("../models/genero");
-const jwt=require("jsonwebtoken");
+
 
 //
 exports.obtener = async (req, res) => {

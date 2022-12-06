@@ -1,5 +1,5 @@
 const Genero = require("../src/models/genero");
-const jwt=require("jsonwebtoken");
+
 
 exports.obtener = async (req, res) => {
   try {

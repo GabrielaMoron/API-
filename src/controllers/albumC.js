@@ -7,7 +7,7 @@ exports.obtener = async (req, res) => {
   try {
     const album = await Album.find().populate('genero',{
 
-      "_id":1,
+    "_id":1,
     "nombreGenero": 1,
     "estadoGenero": 1
 
@@ -41,7 +41,7 @@ exports.obtenerid = async (req, res) => {
     //try grande con el genero y el registro del album
     try {
   
-       const {
+        const {
       _id,
       nombreAlbum,
       anioPublicacion,
@@ -97,4 +97,4 @@ exports.edit = async(req, res) => {
     } catch(error) {
       res.status(500).json(error);
     }
-  }
+}

@@ -6,7 +6,7 @@ const generoSchema = new mongoose.Schema({
     album:[{
         type:Schema.Types.ObjectId,
         ref:'Album'
-      }]
+    }]
 
   });
 

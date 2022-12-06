@@ -1,10 +1,10 @@
-const genero = require("../models/genero");
+const Genero = require("../models/genero");
 const jwt=require("jsonwebtoken");
 
 exports.obtener = async (req, res) => {
     
     try {
-    const genero = await genero.find().populate({
+    const genero = await Genero.find().populate({
     path: "album",
     select:{genero:0} //populate de genero. remplazo del path en el documento cuando esta en la coleccion, o sea select and put  
     });
@@ -20,7 +20,7 @@ exports.obtenerid = async (req, res) => {
     
     try {
     const _id = req.params._id;
-    const genero = await genero.findById(_id).populate({
+    const genero = await Genero.findById(_id).populate({
     path: "album",
     select:{genero:0} 
     }); 
@@ -36,7 +36,7 @@ exports.obtenerid = async (req, res) => {
     try {
   
       //const { nombrehab, numerohab, capacidad, camas, descripcion, wifi, tv, banio, cajafuerte, nevera, valornoche, img, estado } = req.body;
-      const nGenero = new genero(req.body)
+      const nGenero = new Genero(req.body)
       console.log(req.file);
 
      
@@ -52,7 +52,7 @@ exports.obtenerid = async (req, res) => {
 exports.edit = async(req, res) => {
     try {
       const _id = req.params._id;
-      const nGenero = new genero(req.body,req.file)
+      const nGenero = new Genero(req.body,req.file)
       console.log(req.file);
 
       
